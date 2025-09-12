@@ -1,8 +1,8 @@
-package modules.model.entrega;
+package modules.entrega;
 
-import modules.model.motorista.Motorista;
-import modules.model.pedido.Pedido;
-import modules.model.enums.EntregaEnum;
+import modules.motorista.Motorista;
+import modules.pedido.Pedido;
+import modules.entrega.domain.enums.EntregaEnum;
 
 import java.time.LocalDateTime;
 

@@ -1,7 +1,7 @@
-package modules.model.pedido;
+package modules.pedido;
 
-import modules.model.cliente.Cliente;
-import modules.model.enums.StatusEnum;
+import modules.cliente.Cliente;
+import modules.pedido.domain.enums.StatusEnum;
 
 import java.time.LocalDate;
 

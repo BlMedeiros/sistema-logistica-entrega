@@ -1,6 +1,6 @@
-package modules.model.historico;
+package modules.historico;
 
-import modules.model.entrega.Entrega;
+import modules.entrega.Entrega;
 
 import java.time.LocalDate;
 

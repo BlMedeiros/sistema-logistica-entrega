@@ -1,6 +1,6 @@
 package view;
 
-import utils.ConsoleUtils;
+import core.utils.ConsoleUtils;
 
 import java.util.Scanner;
 

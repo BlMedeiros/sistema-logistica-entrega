@@ -1,4 +1,4 @@
-package modules.model.cliente;
+package modules.cliente;
 
 public class Cliente {
     private int id;
