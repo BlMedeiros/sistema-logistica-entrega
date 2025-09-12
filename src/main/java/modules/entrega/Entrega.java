@@ -1,8 +1,9 @@
-package model;
+package modules.model.entrega;
 
-import model.enums.EntregaEnum;
+import modules.model.motorista.Motorista;
+import modules.model.pedido.Pedido;
+import modules.model.enums.EntregaEnum;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Entrega {

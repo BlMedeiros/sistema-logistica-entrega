@@ -1,4 +1,4 @@
-package model;
+package modules.model.motorista;
 
 public class Motorista {
     private int id;

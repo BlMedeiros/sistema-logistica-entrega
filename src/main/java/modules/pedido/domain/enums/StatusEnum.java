@@ -1,4 +1,4 @@
-package model.enums;
+package modules.pedido.enums;
 
 public enum StatusEnum {
     PENDENTE,
