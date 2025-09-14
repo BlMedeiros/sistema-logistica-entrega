@@ -1,6 +1,11 @@
 package modules.cliente.application.command;
 
-public final class CadastrarClientCommand {
-    private final String nome;
+import modules.cliente.domain.model.valueobjects.Documento;
 
-}
+public record CadastrarClientCommand(
+        String nome,
+        Documento cpf_cpnj,
+        String endereco,
+        String cidade,
+        String estado
+) { }

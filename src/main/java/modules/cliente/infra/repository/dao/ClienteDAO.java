@@ -1,4 +1,9 @@
 package modules.cliente.infra.repository.dao;
 
-public class ClienteDAO {
+import modules.cliente.domain.model.Cliente;
+
+public interface ClienteDAO {
+
+    void cadastrarCliente(Cliente cliente);
+    void excluirCliente(Cliente cliente);
 }

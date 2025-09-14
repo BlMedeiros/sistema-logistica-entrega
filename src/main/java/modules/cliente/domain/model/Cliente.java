@@ -1,15 +1,16 @@
-package modules.cliente.domain;
+package modules.cliente.domain.model;
+
+import modules.cliente.domain.model.valueobjects.Documento;
 
 public class Cliente {
     private int id;
     private String nome;
-    private String cpf_cnpj;
+    private Documento cpf_cnpj;
     private String endereco;
     private String cidade;
     private String estado;
 
-    public Cliente(int id, String nome, String cpf_cnpj, String endereco, String cidade, String estado) {
-        this.id = id;
+    public Cliente(String nome, Documento cpf_cnpj, String endereco, String cidade, String estado) {
         this.nome = nome;
         this.cpf_cnpj = cpf_cnpj;
         this.endereco = endereco;
@@ -33,11 +34,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getCpf_cnpj() {
+    public Documento getCpf_cnpj() {
         return cpf_cnpj;
     }
 
-    public void setCpf_cnpj(String cpf_cnpj) {
+    public void setCpf_cnpj(Documento cpf_cnpj) {
         this.cpf_cnpj = cpf_cnpj;
     }
 

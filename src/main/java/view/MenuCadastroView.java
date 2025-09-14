@@ -1,6 +1,7 @@
 package view;
 
 import core.utils.ConsoleUtils;
+import modules.cliente.domain.model.valueobjects.Documento;
 
 import java.util.Scanner;
 
@@ -19,5 +20,13 @@ public class MenuCadastroView {
         System.out.println("0. Voltar ao Menu Principal");
 
         return ConsoleUtils.lerOpcao("Digite uma Opção: ");
+    }
+
+    public String lerClienteString() {
+        return ConsoleUtils.lerTexto("Digite o Nome do Cliente: ");
+    }
+
+    public String lerDocumentoCliente() {
+        return ConsoleUtils.lerTexto("Digite o Documento do Cliente: ");
     }
 }

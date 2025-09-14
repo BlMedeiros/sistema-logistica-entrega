@@ -22,9 +22,19 @@ public class ConsoleUtils {
         }
     }
 
-    public String lerTexto(String msg) {
-        System.out.print(msg);
-        return sc.nextLine().trim();
+    public static String lerTexto(String msg) {
+        String valor;
+        while (true) {
+            try {
+                System.out.print(msg);
+                valor = sc.nextLine();
+                sc.nextLine();
+                return valor;
+            } catch (InputMismatchException e) {
+                System.out.println("⚠ Entrada inválida. Digite um número inteiro.");
+                sc.nextLine();
+            }
+        }
     }
 
     public double lerDouble(String msg) {
