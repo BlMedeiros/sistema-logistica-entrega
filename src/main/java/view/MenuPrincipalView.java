@@ -4,10 +4,10 @@ import core.utils.ConsoleUtils;
 
 import java.util.Scanner;
 
-public class EntregaView {
+public class MenuPrincipalView {
     private final Scanner sc;
 
-    public EntregaView(Scanner sc) {
+    public MenuPrincipalView(Scanner sc) {
         this.sc = sc;
     }
 
@@ -140,7 +140,7 @@ public class EntregaView {
         } while (opcao != 0);
     }
 
-    public int menuPrincipal() {
+    public int lerOpcaoMenuPrincipal() {
 
         System.out.println("\n\n---SISTEMA DE ENTREGAS---");
         System.out.println("\n1. Cadastrar");
@@ -153,57 +153,6 @@ public class EntregaView {
         return ConsoleUtils.lerOpcao("Digite uma Opção: ");
     }
 
-    public int menuCadastrar() {
 
-        System.out.println("\n\n---MENU DE CADASTRO---");
-        System.out.println("\n1. Cadastrar Cliente");
-        System.out.println("2. Cadastrar Motorista");
-        System.out.println("0. Voltar ao Menu Principal");
 
-        return ConsoleUtils.lerOpcao("Digite uma Opção: ");
-    }
-
-    public int menuBusca() {
-
-        System.out.println("\n\n---MENU DE BUSCA---");
-        System.out.println("\n1. Buscar Peido por CPF/CNPJ do Cliente");
-        System.out.println("0. Voltar ao Menu Principal");
-
-        return ConsoleUtils.lerOpcao("Digite uma Opção: ");
-    }
-
-    public int menuEntrega() {
-
-        System.out.println("\n\n---MENU DE ENTREGAS---");
-        System.out.println("\n1. Criar Pedido");
-        System.out.println("2. Gerar Entrega");
-        System.out.println("3. Atualizar Status de Entrega");
-        System.out.println("4. Cancelar Pedido");
-        System.out.println("0. Voltar ao Menu Principal");
-
-        return ConsoleUtils.lerOpcao("Digite uma Opção: ");
-    }
-
-    public int menuRelatorio() {
-
-        System.out.println("\n\n---MENU DE RELÁTORIOS---");
-        System.out.println("\n1. Total de Entregas por Motorista");
-        System.out.println("2. Cliente com Maior Volume Entregue");
-        System.out.println("3. Pedidos Pendentes por Estado");
-        System.out.println("4. Entregas Atrasadas por Cidade");
-        System.out.println("0. Voltar ao Menu Principal");
-
-        return ConsoleUtils.lerOpcao("Digite uma Opção: ");
-    }
-
-    public int menuExcluir() {
-
-        System.out.println("\n\n---MENU DE EXCLUSÃO---");
-        System.out.println("\n1. Excluir Entrega");
-        System.out.println("2. Excluir Cliente");
-        System.out.println("3. Excluir Motorista");
-        System.out.println("0. Voltar ao Menu Principal");
-
-        return ConsoleUtils.lerOpcao("Digite uma Opção: ");
-    }
 }

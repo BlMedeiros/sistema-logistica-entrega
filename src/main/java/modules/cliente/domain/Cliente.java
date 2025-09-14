@@ -1,4 +1,4 @@
-package modules.cliente;
+package modules.cliente.domain;
 
 public class Cliente {
     private int id;
@@ -65,3 +65,4 @@ public class Cliente {
         this.estado = estado;
     }
 }
+
