@@ -2,24 +2,27 @@ package modules.cliente.domain.model.valueobjects;
 
 public class Documento {
 
-    private String cpf_cnpj;
+    private final String cpf_cnpj;
 
     public Documento(String cpf_cnpj) {
+        String valorLimpo = cpf_cnpj.replaceAll("\\D", "");
 
-        if(!validaCnpj(cpf_cnpj) && !validaCpf(cpf_cnpj)) {
+        if (!validaCnpj(valorLimpo) && !validaCpf(valorLimpo)) {
             throw new IllegalArgumentException("Cpf ou Cnpj Inválido! Tente Novamente.");
         }
+
+        this.cpf_cnpj = valorLimpo;
     }
 
-    private boolean validaCpf(String cpf_cnpj) {
-        String valor = cpf_cnpj.replaceAll("//D", ""); // Remove Tudo que Não for Número
-
-        return valor.length() == 11;
+    private boolean validaCpf(String valor) {
+        return valor.length() == 11; // validação simples
     }
 
-    private boolean validaCnpj(String cpf_cnpj) {
-        String valor = cpf_cnpj.replaceAll("//D", "");
+    private boolean validaCnpj(String valor) {
+        return valor.length() == 14; // validação simples
+    }
 
-        return valor.length() == 14;
+    public String getValor() {
+        return cpf_cnpj;
     }
 }

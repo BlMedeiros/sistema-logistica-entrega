@@ -22,11 +22,28 @@ public class MenuCadastroView {
         return ConsoleUtils.lerOpcao("Digite uma Opção: ");
     }
 
-    public String lerClienteString() {
-        return ConsoleUtils.lerTexto("Digite o Nome do Cliente: ");
+    public String lerNomeCliente() {
+        System.out.print("Digite o Nome do Cliente: ");
+        return sc.nextLine();
     }
 
     public String lerDocumentoCliente() {
-        return ConsoleUtils.lerTexto("Digite o Documento do Cliente: ");
+        System.out.print("Digite o Documento do Cliente: ");
+        return sc.nextLine();
+    }
+
+    public String lerEnderecoCliente() {
+        System.out.print("Digite o Endereço do Cliente: ");
+        return sc.nextLine();
+    }
+
+    public String lerCidadeCliente() {
+        System.out.print("Digite a Cidade do Cliente: ");
+        return sc.nextLine();
+    }
+
+    public String lerEstadoCliente() {
+        System.out.print("Digite o Estado do Cliente: ");
+        return sc.nextLine();
     }
 }

@@ -1,19 +1,19 @@
 package modules.cliente.application.handlers;
 
-import modules.cliente.application.command.CadastrarClientCommand;
+import modules.cliente.application.command.CadastrarClienteCommand;
 import modules.cliente.domain.model.Cliente;
-import modules.cliente.infra.repository.dao.ClienteDAO;
-import modules.cliente.infra.repository.dao.ClienteDAOImpl;
+import modules.cliente.infra.persistence.dao.ClienteDAO;
+import modules.cliente.infra.persistence.dao.ClienteDAOImpl;
 
 public class CadastrarClienteHandler {
 
-    public void Handle(CadastrarClientCommand cmd) {
+    public void Handle(CadastrarClienteCommand cmd) {
 
-        var item = new Cliente(cmd.nome(),cmd.cpf_cpnj(),cmd.endereco(),cmd.cidade(),cmd.estado());
+        var cliente = new Cliente(cmd.nome(),cmd.cpf_cpnj(),cmd.endereco(),cmd.cidade(),cmd.estado());
 
         ClienteDAO dao = new ClienteDAOImpl();
 
-        dao.cadastrarCliente(item);
+        dao.cadastrarCliente(cliente);
 
     }
 }

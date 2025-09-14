@@ -1,6 +1,7 @@
 package application.controller;
 
-import modules.cliente.application.command.CadastrarClientCommand;
+import modules.cliente.application.command.CadastrarClienteCommand;
+import modules.cliente.application.handlers.CadastrarClienteHandler;
 import modules.cliente.domain.model.valueobjects.Documento;
 import view.MenuCadastroView;
 
@@ -27,16 +28,19 @@ public class MenuCadastroController {
     }
 
     public void cadastrarCliente() {
-        String nome =  view.lerClienteString();
+        String nome = view.lerNomeCliente();
 
         String documentoTexto = view.lerDocumentoCliente();
         Documento documento = new Documento(documentoTexto);
 
-        String endereco = view.lerClienteString();
-        String cidade = view.lerClienteString();
-        String estado = view.lerClienteString();
+        String endereco = view.lerEnderecoCliente();
+        String cidade = view.lerCidadeCliente();
+        String estado = view.lerEstadoCliente();
 
-        CadastrarClientCommand cmd = new CadastrarClientCommand(nome, documento, endereco, cidade, estado);
+        CadastrarClienteCommand cmd = new CadastrarClienteCommand(nome, documento, endereco, cidade, estado);
+
+        var handler = new CadastrarClienteHandler();
+        handler.Handle(cmd);
     }
 }
 

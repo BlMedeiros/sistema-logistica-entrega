@@ -1,3 +1,4 @@
+import application.controller.MainController;
 import view.MenuPrincipalView;
 
 import java.util.Scanner;
@@ -7,7 +8,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        MenuPrincipalView entregaView = new MenuPrincipalView(sc);
+        MainController entregaView = new MainController(sc);
 
         entregaView.iniciar();
     }
