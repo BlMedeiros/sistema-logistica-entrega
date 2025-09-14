@@ -7,9 +7,6 @@ import modules.cliente.infra.repository.dao.ClienteDAOImpl;
 
 public class CadastrarClienteHandler {
 
-    private static int idCounter = 1;
-
-
     public void Handle(CadastrarClientCommand cmd) {
 
         var item = new Cliente(cmd.nome(),cmd.cpf_cpnj(),cmd.endereco(),cmd.cidade(),cmd.estado());
