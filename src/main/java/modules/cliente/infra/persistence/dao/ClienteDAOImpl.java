@@ -12,7 +12,7 @@ public class ClienteDAOImpl implements ClienteDAO{
     @Override
     public void cadastrarCliente(Cliente cliente) {
         String query = """
-        INSERT INTO cliente_aggregate (nome, cpf_cnpj, endereco, cidade, estado)
+        INSERT INTO cliente (nome, cpf_cnpj, endereco, cidade, estado)
         VALUES (?, ?, ?, ?, ?)
         """;
 
