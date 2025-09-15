@@ -8,8 +8,8 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        MainController entregaView = new MainController(sc);
+        MainController menuIniciar = new MainController(sc);
 
-        entregaView.iniciar();
+        menuIniciar.iniciar();
     }
 }
