@@ -1,6 +1,7 @@
 package modules.cliente.infra.persistence.dao;
 
 import modules.cliente.domain.model.Cliente;
+import modules.cliente.domain.model.valueobjects.Documento;
 import modules.cliente.infra.conexao.ConnectionDB;
 
 import java.sql.*;
@@ -45,7 +46,44 @@ public class ClienteDAOImpl implements ClienteDAO{
         }
     }
 
+    @Override
+    public void excluirCliente(int id) throws SQLException {
+        String query = "DELETE FROM cliente WHERE id = ?";
 
+        try (Connection conn = ConnectionDB.connect();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
 
+            stmt.setInt(1,id);
 
-}
+            int affected = stmt.executeUpdate();
+            if (affected == 0) {
+                throw new RuntimeException("Falha ao excluir cliente, nenhuma linha afetada.");
+            }
+        }
+    }
+
+        @Override
+        public Cliente buscarPorId(int id) {
+            String sql = "SELECT id, nome, cpf_cnpj, endereco, cidade, estado FROM cliente WHERE id = ?";
+            try (Connection conn = ConnectionDB.connect();
+                 PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+                stmt.setInt(1, id);
+                ResultSet rs = stmt.executeQuery();
+
+                if (rs.next()) {
+                    return new Cliente(
+                            rs.getString("nome"),
+                            new Documento(rs.getString("cpf_cnpj")),
+                            rs.getString("endereco"),
+                            rs.getString("cidade"),
+                            rs.getString("estado")
+                    );
+                }
+                throw new RuntimeException("Cliente não encontrado: " + id);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
