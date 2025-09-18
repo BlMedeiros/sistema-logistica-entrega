@@ -72,13 +72,15 @@ public class ClienteDAOImpl implements ClienteDAO{
                 ResultSet rs = stmt.executeQuery();
 
                 if (rs.next()) {
-                    return new Cliente(
+                    Cliente cliente = new Cliente(
                             rs.getString("nome"),
                             new Documento(rs.getString("cpf_cnpj")),
                             rs.getString("endereco"),
                             rs.getString("cidade"),
                             rs.getString("estado")
                     );
+                    cliente.setId(rs.getInt("id"));
+                    return cliente;
                 }
                 throw new RuntimeException("Cliente não encontrado: " + id);
             } catch (SQLException e) {

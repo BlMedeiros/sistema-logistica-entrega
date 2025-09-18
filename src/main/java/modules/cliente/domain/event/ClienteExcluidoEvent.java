@@ -28,7 +28,7 @@ public class ClienteExcluidoEvent extends Event {
     public String toJson() {
         return "{"
                 + "\"nome\":\"" + nome + "\","
-                + "\"cpf_cnpj\":\"" + cpfCnpj.getValor() + "\","
+                + "\"cpf_cnpj\":\"" + cpfCnpj.getValor() + "\""
                 + "}";
     }
 

@@ -21,8 +21,8 @@ public class MenuExcluirController {
             opcao = view.lerOpcaoMenuExcluir();
 
             switch (opcao) {
-                case 1 -> excluirCliente();
-                case 2 -> System.out.println();
+                case 1 -> System.out.println();
+                case 2 -> excluirCliente();
                 case 0 -> System.out.println("Voltando ao Menu Principal...");
                 default -> System.out.println("Opção Inválida! Tente Novamente.");
             }
