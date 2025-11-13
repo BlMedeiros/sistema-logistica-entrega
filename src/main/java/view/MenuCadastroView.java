@@ -46,4 +46,24 @@ public class MenuCadastroView {
         System.out.print("Digite o Estado do Cliente: ");
         return sc.nextLine();
     }
+
+    public String lerNomeMotorista() {
+        System.out.print("Digite o Nome do Motorista: ");
+        return sc.nextLine();
+    }
+
+    public String lerCnh() {
+        System.out.println("Digite o Cnh do Motorista: ");
+        return sc.nextLine();
+    }
+
+    public String lerVeiculo() {
+        System.out.println("Digite o Nome do Veículo: ");
+        return sc.nextLine();
+    }
+
+    public String lerCidadeBase() {
+        System.out.println("Digite a Cidade Base do Motorista: ");
+        return sc.nextLine();
+    }
 }
