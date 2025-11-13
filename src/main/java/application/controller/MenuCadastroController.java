@@ -3,6 +3,8 @@ package application.controller;
 import modules.cliente.application.command.CadastrarClienteCommand;
 import modules.cliente.application.handlers.CadastrarClienteHandler;
 import modules.cliente.domain.model.valueobjects.Documento;
+import modules.motorista.application.command.CadastrarMotoristaCommand;
+import modules.motorista.application.handlers.CadastrarMotoristaHandler;
 import view.MenuCadastroView;
 
 public class MenuCadastroController {
@@ -20,7 +22,7 @@ public class MenuCadastroController {
 
             switch (opcao) {
                 case 1 -> cadastrarCliente();
-                case 2 -> System.out.println();
+                case 2 -> cadastrarMotorista();
                 case 0 -> System.out.println("Voltando ao Menu Principal...");
                 default -> System.out.println("Opção Inválida! Tente Novamente.");
             }
@@ -41,6 +43,21 @@ public class MenuCadastroController {
 
         var handler = new CadastrarClienteHandler();
         handler.Handle(cmd);
+    }
+
+    public void cadastrarMotorista() {
+
+        String nome = view.lerNomeMotorista();
+
+        String cnh = view.lerCnh();
+        String veiculo = view.lerVeiculo();
+        String cidadeBase = view.lerCidadeBase();
+
+        CadastrarMotoristaCommand cmd = new CadastrarMotoristaCommand(nome,cnh,veiculo,cidadeBase);
+
+        var handler = new CadastrarMotoristaHandler();
+
+        handler.handle(cmd);
     }
 }
 
