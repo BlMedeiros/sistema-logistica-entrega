@@ -32,7 +32,7 @@ public class EventStore {
                 throw new RuntimeException("Falha ao cadastrar cliente, nenhuma linha afetada.");
             }
     } catch (SQLException e) {
-            throw   new RuntimeException(e);
+            throw new RuntimeException(e);
         }
     }
 }
