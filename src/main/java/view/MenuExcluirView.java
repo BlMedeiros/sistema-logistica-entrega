@@ -27,4 +27,9 @@ public class MenuExcluirView {
         System.out.print("Digite o Endereço do Cliente: ");
         return sc.nextInt();
     }
+
+    public int lerIdMotorista() {
+        System.out.println("Digite o Endereço do Motorista: ");
+        return  sc.nextInt();
+    }
 }
