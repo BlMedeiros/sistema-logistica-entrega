@@ -15,6 +15,14 @@ public class Motorista {
         this.cidadeBase = cidadeBase;
     }
 
+    public Motorista() {
+        this.nome = nome;
+        this.cnh = cnh;
+        this.veiculo = veiculo;
+        this.cidadeBase = cidadeBase;
+    }
+
+
     public int getId() {
         return id;
     }
