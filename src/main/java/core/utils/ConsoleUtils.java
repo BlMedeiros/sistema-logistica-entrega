@@ -31,7 +31,7 @@ public class ConsoleUtils {
                 sc.nextLine();
                 return valor;
             } catch (InputMismatchException e) {
-                System.out.println("⚠ Entrada inválida. Digite um número inteiro.");
+                System.out.println("⚠ Entrada inválida.");
                 sc.nextLine();
             }
         }
