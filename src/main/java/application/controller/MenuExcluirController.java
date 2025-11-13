@@ -38,4 +38,11 @@ public class MenuExcluirController {
         handle.Handle(cmd);
 
     }
+
+    public void excluirMotorista() throws SQLException {
+
+        int motoristaId = view.lerIdMotorista();
+
+
+    }
 }
